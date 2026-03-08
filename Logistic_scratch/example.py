@@ -18,6 +18,6 @@ print('bias',model.b)
 test_data = np.array([
     [2,2],
     [3,4],
-    [1,1]
+    [0,1]
 ])
-model.predict(test_data)
+print(f'the prediction is {model.predict(test_data)}')

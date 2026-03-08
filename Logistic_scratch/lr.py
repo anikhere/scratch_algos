@@ -38,15 +38,19 @@ class LR:
             dw,db = self.Gradient(x,y)
             self.w = self.w - self.lr*dw
             self.b = self.b - self.lr*db 
+            if iters%10==0:
+                print(f'the loss is {self.loss(x=x,y=y)}')
+            
     
     def loss(self,x,y):
         p = self.general(x)
         loss = - np.mean(y*np.log(p) + (1-y)*np.log(1-p))
-        print(f'the loss is {loss}')
+        return loss
 
     
     def predict(self, val):   
         p = self.general(val)
+        print(f'the probablities are {p}')
         preds = (p >= self.threshold).astype(int)
         return preds        
         
