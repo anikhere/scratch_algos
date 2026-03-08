@@ -21,4 +21,4 @@ jobs:
             
             - name: Run Logistic Regression
               run: |
-                python run_model.py
+                python Logistic_scratch/example.py
